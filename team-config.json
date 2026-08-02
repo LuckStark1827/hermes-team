@@ -46,7 +46,7 @@
       "profile": "pierre_frontend",
       "name": "Pierre",
       "role": "Frontend Engineer",
-      "model": "kimi-k2.6",
+      "model": "kimi-k2.7-code",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -127,7 +127,7 @@
       "profile": "camille_docs",
       "name": "Camille",
       "role": "Documentation",
-      "model": "deepseek-v4-flash",
+      "model": "kimi-k2.6",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -140,7 +140,7 @@
       "profile": "emma_assistant",
       "name": "Emma",
       "role": "Assistant Personnel",
-      "model": "deepseek-v4-flash",
+      "model": "kimi-k2.6",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -180,7 +180,7 @@
       "profile": "lea_marketing",
       "name": "Léa",
       "role": "Marketing",
-      "model": "deepseek-v4-flash",
+      "model": "kimi-k2.6",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -193,7 +193,7 @@
       "profile": "nico_monitoring",
       "name": "Nico",
       "role": "Monitoring Agent",
-      "model": "deepseek-v4-flash",
+      "model": "kimi-k2.6",
       "provider": "ollama",
       "toolsets": [
         "terminal",
@@ -380,5 +380,23 @@
     "bot_token_env": "TELEGRAM_BOT_TOKEN"
   },
   "provider": "ollama",
-  "base_url": "https://ollama.com/v1"
+  "base_url": "https://ollama.com/v1",
+  "watch": [
+    {
+      "profile": "karl_knowledge_curator",
+      "name": "Karl",
+      "role": "Knowledge Curator & Veille unique",
+      "model": "deepseek-v4-flash",
+      "provider": "ollama",
+      "toolsets": [
+        "web",
+        "memory",
+        "file",
+        "skills",
+        "code_execution"
+      ],
+      "base_url": "https://ollama.com/v1",
+      "digest": "Telegram quotidien à 8h00"
+    }
+  ]
 }
