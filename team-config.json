@@ -1,0 +1,384 @@
+{
+  "production": [
+    {
+      "profile": "hugo_orchestrator",
+      "name": "Hugo",
+      "role": "Orchestrateur",
+      "model": "kimi-k2.7-code",
+      "provider": "ollama",
+      "toolsets": [
+        "safe",
+        "delegation",
+        "memory",
+        "session_search"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "theo_router",
+      "name": "Théo",
+      "role": "Model Router",
+      "model": "kimi-k3",
+      "provider": "ollama",
+      "toolsets": [
+        "memory",
+        "web",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "lucas_software",
+      "name": "Lucas",
+      "role": "Software Engineer",
+      "model": "kimi-k2.7-code",
+      "provider": "ollama",
+      "toolsets": [
+        "file",
+        "terminal",
+        "code_execution",
+        "skills",
+        "web"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "pierre_frontend",
+      "name": "Pierre",
+      "role": "Frontend Engineer",
+      "model": "kimi-k2.6",
+      "provider": "ollama",
+      "toolsets": [
+        "file",
+        "code_execution",
+        "web",
+        "vision"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "paul_backend",
+      "name": "Paul",
+      "role": "Backend Engineer",
+      "model": "kimi-k3",
+      "provider": "ollama",
+      "toolsets": [
+        "file",
+        "terminal",
+        "code_execution",
+        "web"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "antoine_sysadmin",
+      "name": "Antoine",
+      "role": "SysAdmin / DevOps",
+      "model": "kimi-k2.6",
+      "provider": "ollama",
+      "toolsets": [
+        "terminal",
+        "file",
+        "web"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "maxime_security",
+      "name": "Maxime",
+      "role": "Security Engineer",
+      "model": "deepseek-v4-pro",
+      "provider": "ollama",
+      "toolsets": [
+        "terminal",
+        "web",
+        "search",
+        "file"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "sophie_qa",
+      "name": "Sophie",
+      "role": "QA Tester",
+      "model": "kimi-k2.6",
+      "provider": "ollama",
+      "toolsets": [
+        "file",
+        "terminal",
+        "code_execution"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "juliette_data",
+      "name": "Juliette",
+      "role": "Data Analyst",
+      "model": "kimi-k2.6",
+      "provider": "ollama",
+      "toolsets": [
+        "terminal",
+        "code_execution",
+        "web"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "camille_docs",
+      "name": "Camille",
+      "role": "Documentation",
+      "model": "deepseek-v4-flash",
+      "provider": "ollama",
+      "toolsets": [
+        "file",
+        "web",
+        "memory"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "emma_assistant",
+      "name": "Emma",
+      "role": "Assistant Personnel",
+      "model": "deepseek-v4-flash",
+      "provider": "ollama",
+      "toolsets": [
+        "web",
+        "memory",
+        "session_search",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "louis_business",
+      "name": "Louis",
+      "role": "Business Manager",
+      "model": "kimi-k2.6",
+      "provider": "ollama",
+      "toolsets": [
+        "web",
+        "memory",
+        "code_execution"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "thomas_product",
+      "name": "Thomas",
+      "role": "Product Manager",
+      "model": "kimi-k2.7-code",
+      "provider": "ollama",
+      "toolsets": [
+        "web",
+        "memory",
+        "file"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "lea_marketing",
+      "name": "Léa",
+      "role": "Marketing",
+      "model": "deepseek-v4-flash",
+      "provider": "ollama",
+      "toolsets": [
+        "web",
+        "memory",
+        "file"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "nico_monitoring",
+      "name": "Nico",
+      "role": "Monitoring Agent",
+      "model": "deepseek-v4-flash",
+      "provider": "ollama",
+      "toolsets": [
+        "terminal",
+        "web",
+        "cronjob"
+      ],
+      "base_url": "https://ollama.com/v1"
+    }
+  ],
+  "watch_team": [
+    {
+      "profile": "victor_ai_research",
+      "name": "Victor",
+      "role": "AI Research Analyst",
+      "model": "kimi-k2.6",
+      "provider": "ollama",
+      "schedule": "0 8 * * *",
+      "toolsets": [
+        "web",
+        "memory",
+        "file",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "eva_tech_watch",
+      "name": "Eva",
+      "role": "Tech Watch Analyst",
+      "model": "deepseek-v4-flash",
+      "provider": "ollama",
+      "schedule": "0 8 * * *",
+      "toolsets": [
+        "web",
+        "memory",
+        "file",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "oscar_open_source",
+      "name": "Oscar",
+      "role": "Open Source Analyst",
+      "model": "deepseek-v4-flash",
+      "provider": "ollama",
+      "schedule": "0 8 * * *",
+      "toolsets": [
+        "web",
+        "memory",
+        "file",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "marco_market",
+      "name": "Marco",
+      "role": "Market Analyst",
+      "model": "deepseek-v4-flash",
+      "provider": "ollama",
+      "schedule": "0 9 * * 1",
+      "toolsets": [
+        "web",
+        "memory",
+        "file",
+        "skills",
+        "code_execution"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "sarah_security_watch",
+      "name": "Sarah",
+      "role": "Security Watch",
+      "model": "kimi-k2.6",
+      "provider": "ollama",
+      "schedule": "0 8 * * *",
+      "toolsets": [
+        "web",
+        "search",
+        "memory",
+        "file",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "julia_legal_watch",
+      "name": "Julia",
+      "role": "Legal Watch",
+      "model": "deepseek-v4-flash",
+      "provider": "ollama",
+      "schedule": "0 9 * * 1",
+      "toolsets": [
+        "web",
+        "memory",
+        "file",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "karl_knowledge_curator",
+      "name": "Karl",
+      "role": "Knowledge Curator",
+      "model": "glm-5.2",
+      "provider": "ollama",
+      "schedule": "0 9 * * *",
+      "toolsets": [
+        "file",
+        "memory",
+        "web",
+        "skills",
+        "code_execution"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "coach_software_research",
+      "name": "Coach Software Research",
+      "role": "Coach Software Research",
+      "model": "kimi-k2.6",
+      "provider": "ollama",
+      "schedule": "0 8 * * *",
+      "toolsets": [
+        "web",
+        "memory",
+        "file",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "coach_infra_research",
+      "name": "Coach Infra Research",
+      "role": "Coach Infrastructure Research",
+      "model": "kimi-k2.6",
+      "provider": "ollama",
+      "schedule": "0 8 * * *",
+      "toolsets": [
+        "web",
+        "memory",
+        "file",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "coach_llm_research",
+      "name": "Coach LLM Research",
+      "role": "Coach LLM Research",
+      "model": "kimi-k3",
+      "provider": "ollama",
+      "schedule": "0 8 * * *",
+      "toolsets": [
+        "web",
+        "memory",
+        "file",
+        "skills"
+      ],
+      "base_url": "https://ollama.com/v1"
+    }
+  ],
+  "architecture": {
+    "user": "hugo_orchestrator",
+    "router": "theo_router",
+    "production_leads": [
+      "lucas_software",
+      "antoine_sysadmin",
+      "maxime_security",
+      "thomas_product",
+      "louis_business"
+    ],
+    "watch_lead": "karl_knowledge_curator",
+    "knowledge_base": "/data/workspace/knowledge-base"
+  },
+  "delivery": {
+    "target": "telegram",
+    "time": "08:00",
+    "agent": "karl_knowledge_curator",
+    "script": "morning-watch-digest.py",
+    "chat_id_env": "TELEGRAM_CHAT_ID",
+    "bot_token_env": "TELEGRAM_BOT_TOKEN"
+  },
+  "provider": "ollama",
+  "base_url": "https://ollama.com/v1"
+}
