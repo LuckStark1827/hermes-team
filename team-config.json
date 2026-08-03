@@ -127,7 +127,7 @@
       "profile": "camille_docs",
       "name": "Camille",
       "role": "Documentation",
-      "model": "deepseek-v4-flash",
+      "model": "deepseek-v4-flash:0731",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -140,7 +140,7 @@
       "profile": "emma_assistant",
       "name": "Emma",
       "role": "Assistant Personnel",
-      "model": "deepseek-v4-flash",
+      "model": "deepseek-v4-flash:0731",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -154,7 +154,7 @@
       "profile": "louis_business",
       "name": "Louis",
       "role": "Business Manager",
-      "model": "deepseek-v4-flash",
+      "model": "deepseek-v4-flash:0731",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -180,7 +180,7 @@
       "profile": "lea_marketing",
       "name": "Léa",
       "role": "Marketing",
-      "model": "deepseek-v4-flash",
+      "model": "deepseek-v4-flash:0731",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -193,7 +193,7 @@
       "profile": "nico_monitoring",
       "name": "Nico",
       "role": "Monitoring Agent",
-      "model": "deepseek-v4-flash",
+      "model": "deepseek-v4-flash:0731",
       "provider": "ollama",
       "toolsets": [
         "terminal",
