@@ -201,6 +201,22 @@
         "cronjob"
       ],
       "base_url": "https://ollama.com/v1"
+    },
+    {
+      "profile": "mateo_ux_designer",
+      "prenom": "Mateo",
+      "role": "UX/UI Designer",
+      "model": "kimi-k2.7-code",
+      "provider": "ollama",
+      "base_url": "https://ollama.com/v1",
+      "toolsets": [
+        "safe",
+        "file",
+        "web",
+        "memory",
+        "vision",
+        "skills"
+      ]
     }
   ],
   "watch_team": [
