@@ -4,7 +4,7 @@
       "profile": "hugo_orchestrator",
       "name": "Hugo",
       "role": "Orchestrateur",
-      "model": "kimi-k2.7-code",
+      "model": "glm-5.2",
       "provider": "ollama",
       "toolsets": [
         "safe",
@@ -18,7 +18,7 @@
       "profile": "theo_router",
       "name": "Théo",
       "role": "Model Router",
-      "model": "kimi-k3",
+      "model": "glm-5.2",
       "provider": "ollama",
       "toolsets": [
         "memory",
@@ -31,7 +31,7 @@
       "profile": "lucas_software",
       "name": "Lucas",
       "role": "Software Engineer",
-      "model": "kimi-k2.7-code",
+      "model": "glm-5.2",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -46,7 +46,7 @@
       "profile": "pierre_frontend",
       "name": "Pierre",
       "role": "Frontend Engineer",
-      "model": "kimi-k2.7-code",
+      "model": "qwen3.5:397b",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -60,7 +60,7 @@
       "profile": "paul_backend",
       "name": "Paul",
       "role": "Backend Engineer",
-      "model": "kimi-k3",
+      "model": "glm-5.2",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -74,7 +74,7 @@
       "profile": "antoine_sysadmin",
       "name": "Antoine",
       "role": "SysAdmin / DevOps / Model Benchmarker",
-      "model": "kimi-k2.6",
+      "model": "qwen3.5:397b",
       "provider": "ollama",
       "toolsets": [
         "terminal",
@@ -87,7 +87,7 @@
       "profile": "maxime_security",
       "name": "Maxime",
       "role": "Security Engineer",
-      "model": "deepseek-v4-pro",
+      "model": "glm-5.2",
       "provider": "ollama",
       "toolsets": [
         "terminal",
@@ -101,7 +101,7 @@
       "profile": "sophie_qa",
       "name": "Sophie",
       "role": "QA Tester",
-      "model": "kimi-k2.6",
+      "model": "qwen3.5:397b",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -114,7 +114,7 @@
       "profile": "juliette_data",
       "name": "Juliette",
       "role": "Data Analyst",
-      "model": "kimi-k2.6",
+      "model": "qwen3.5:397b",
       "provider": "ollama",
       "toolsets": [
         "terminal",
@@ -127,7 +127,7 @@
       "profile": "camille_docs",
       "name": "Camille",
       "role": "Documentation",
-      "model": "kimi-k2.6",
+      "model": "qwen3.5:397b",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -140,7 +140,7 @@
       "profile": "emma_assistant",
       "name": "Emma",
       "role": "Assistant Personnel",
-      "model": "kimi-k2.6",
+      "model": "qwen3.5:397b",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -154,7 +154,7 @@
       "profile": "louis_business",
       "name": "Louis",
       "role": "Business Manager",
-      "model": "kimi-k2.6",
+      "model": "qwen3.5:397b",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -167,7 +167,7 @@
       "profile": "thomas_product",
       "name": "Thomas",
       "role": "Product Manager",
-      "model": "kimi-k2.7-code",
+      "model": "glm-5.2",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -180,7 +180,7 @@
       "profile": "lea_marketing",
       "name": "Léa",
       "role": "Marketing",
-      "model": "kimi-k2.6",
+      "model": "qwen3.5:397b",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -193,7 +193,7 @@
       "profile": "nico_monitoring",
       "name": "Nico",
       "role": "Monitoring Agent",
-      "model": "kimi-k2.6",
+      "model": "qwen3.5:397b",
       "provider": "ollama",
       "toolsets": [
         "terminal",
@@ -206,7 +206,7 @@
       "profile": "mateo_ux_designer",
       "prenom": "Mateo",
       "role": "UX/UI Designer",
-      "model": "kimi-k2.7-code",
+      "model": "glm-5.2",
       "provider": "ollama",
       "base_url": "https://ollama.com/v1",
       "toolsets": [
@@ -402,7 +402,7 @@
       "profile": "karl_knowledge_curator",
       "name": "Karl",
       "role": "Knowledge Curator & Veille unique",
-      "model": "deepseek-v4-flash:0731-cloud",
+      "model": "deepseek-v4-flash:0731",
       "provider": "ollama",
       "toolsets": [
         "web",
