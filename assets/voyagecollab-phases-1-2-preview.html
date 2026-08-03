@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoyageCollab — Phases 1 & 2</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --vc-primary-50: #eef2ff; --vc-primary-100: #e0e7ff; --vc-primary-200: #c7d2fe;
+      --vc-primary-300: #a5b4fc; --vc-primary-400: #818cf8; --vc-primary-500: #6366f1;
+      --vc-primary-600: #3B4CCA; --vc-primary-700: #3341a8; --vc-primary-800: #283686;
+      --vc-primary-900: #1c275e;
+      --vc-accent-50: #f5f3ff; --vc-accent-100: #ede9fe; --vc-accent-200: #ddd6fe;
+      --vc-accent-300: #c4b5fd; --vc-accent-400: #a78bfa; --vc-accent-500: #8b5cf6;
+      --vc-accent-600: #7C3AED; --vc-accent-700: #6d28d9; --vc-accent-800: #5b21b6;
+      --vc-accent-900: #4c1d95;
+      --vc-teal-500: #14B8A6; --vc-teal-600: #0d9488;
+      --vc-warm-500: #D97706; --vc-warm-600: #b45309;
+      --vc-error-50: #fef2f2; --vc-error-500: #ef4444; --vc-error-600: #dc2626;
+      --vc-success-50: #f0fdf4; --vc-success-500: #22c55e; --vc-success-600: #16a34a;
+      --vc-warning-500: #f59e0b;
+      --vc-neutral-50: #fafafa; --vc-neutral-100: #f5f5f5; --vc-neutral-200: #e5e5e5;
+      --vc-neutral-300: #d4d4d4; --vc-neutral-400: #a3a3a3; --vc-neutral-500: #737373;
+      --vc-neutral-600: #525252; --vc-neutral-700: #404040; --vc-neutral-800: #262626;
+      --vc-neutral-900: #171717;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: 'Inter', sans-serif; background: var(--vc-neutral-50); color: var(--vc-neutral-900); }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; margin: 0; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; }
+
+    /* Header */
+    .header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(23, 23, 23, 0.82); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.1); color: white;
+    }
+    .header-inner { max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.25rem; font-family: 'Playfair Display', serif; }
+    .logo-icon { width: 32px; height: 32px; background: var(--vc-primary-600); border-radius: 8px; display: grid; place-items: center; color: white; }
+    .nav-links { display: flex; gap: 32px; font-size: 0.875rem; font-weight: 500; color: var(--vc-neutral-300); }
+    .nav-links a:hover { color: white; }
+    .header-actions { display: flex; gap: 12px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: var(--radius); font-weight: 600; font-size: 0.875rem; transition: all .15s; }
+    .btn-primary { background: var(--vc-primary-600); color: white; }
+    .btn-primary:hover { background: var(--vc-primary-700); }
+    .btn-white { background: white; color: var(--vc-neutral-900); }
+    .btn-white:hover { background: var(--vc-neutral-100); }
+    .btn-ghost { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.2); }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+    .btn-sm { padding: 8px 14px; font-size: 0.8125rem; }
+
+    /* Hero */
+    .hero { position: relative; background: var(--vc-neutral-900); color: white; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; opacity: .35; }
+    .hero-content { position: relative; max-width: 1280px; margin: 0 auto; padding: 120px 24px 140px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(59,76,202,0.25); color: var(--vc-primary-200); border: 1px solid rgba(99,102,241,0.4); border-radius: 999px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
+    .hero h1 { font-size: 4rem; line-height: 1.05; margin-bottom: 24px; }
+    .hero h1 span { color: var(--vc-primary-400); }
+    .hero p { font-size: 1.125rem; color: var(--vc-neutral-300); line-height: 1.7; max-width: 540px; margin-bottom: 36px; }
+    .hero-actions { display: flex; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
+    .social-proof { display: flex; align-items: center; gap: 14px; font-size: 0.875rem; color: var(--vc-neutral-400); }
+    .avatars { display: flex; }
+    .avatar-mini { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--vc-neutral-900); display: grid; place-items: center; font-size: 0.75rem; font-weight: 700; margin-left: -8px; }
+    .avatar-mini:first-child { margin-left: 0; }
+
+    /* Floating dashboard card */
+    .floating-card { background: rgba(38,38,38,0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 28px; box-shadow: 0 40px 80px rgba(0,0,0,0.35); transform: rotate(2deg); transition: transform .5s; }
+    .floating-card:hover { transform: rotate(0deg); }
+    .fc-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .fc-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; }
+    .fc-date { padding: 4px 10px; background: rgba(217,119,6,0.2); color: var(--vc-warm-500); border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+    .fc-item { display: flex; align-items: center; gap: 12px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 12px; margin-bottom: 10px; }
+    .fc-icon { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 1.1rem; }
+    .fc-label { font-size: 0.875rem; font-weight: 600; }
+    .fc-meta { font-size: 0.75rem; color: var(--vc-neutral-400); }
+    .fc-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .mini-avatars { display: flex; }
+    .mini-avatar { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--vc-neutral-800); display: grid; place-items: center; font-size: 0.65rem; font-weight: 700; margin-left: -6px; color: white; }
+    .mini-avatar:first-child { margin-left: 0; }
+    .budget { font-size: 0.75rem; color: var(--vc-primary-300); font-weight: 700; }
+
+    /* Features */
+    .features { padding: 96px 24px; background: white; }
+    .section-inner { max-width: 1280px; margin: 0 auto; }
+    .section-kicker { color: var(--vc-primary-600); font-weight: 700; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .section-title { font-size: 2.5rem; margin-bottom: 16px; }
+    .section-subtitle { color: var(--vc-neutral-500); font-size: 1.125rem; max-width: 600px; margin-bottom: 56px; }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature-card { padding: 28px; border: 1px solid var(--vc-neutral-200); border-radius: var(--radius); transition: all .2s; }
+    .feature-card:hover { border-color: var(--vc-primary-300); box-shadow: 0 12px 32px rgba(59,76,202,0.08); transform: translateY(-4px); }
+    .feature-icon { width: 48px; height: 48px; border-radius: 10px; background: var(--vc-primary-50); color: var(--vc-primary-600); display: grid; place-items: center; margin-bottom: 18px; }
+    .feature-title { font-size: 1.25rem; margin-bottom: 8px; }
+    .feature-desc { color: var(--vc-neutral-500); font-size: 0.9375rem; line-height: 1.6; }
+
+    /* How it works */
+    .steps { padding: 96px 24px; background: var(--vc-neutral-50); }
+    .steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .step-list { display: flex; flex-direction: column; gap: 28px; }
+    .step { display: flex; gap: 18px; }
+    .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--vc-primary-600); color: white; display: grid; place-items: center; font-weight: 700; flex-shrink: 0; }
+    .step-title { font-size: 1.25rem; margin-bottom: 6px; }
+    .step-desc { color: var(--vc-neutral-500); line-height: 1.6; }
+    .cta-card { background: linear-gradient(135deg, var(--vc-primary-600), var(--vc-accent-700)); color: white; border-radius: 20px; padding: 40px; }
+    .cta-card h3 { font-size: 1.75rem; margin-bottom: 24px; }
+    .check-item { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-weight: 500; }
+
+    /* Auth page */
+    .auth-page { min-height: calc(100vh - 64px); display: grid; place-items: center; background: var(--vc-neutral-900); position: relative; overflow: hidden; padding: 48px 24px; }
+    .auth-bg { position: absolute; inset: 0; opacity: .2; }
+    .auth-card { position: relative; background: white; border-radius: 20px; padding: 40px; width: 100%; max-width: 420px; box-shadow: 0 24px 64px rgba(0,0,0,0.25); }
+    .auth-logo { width: 48px; height: 48px; background: var(--vc-primary-600); color: white; border-radius: 12px; display: grid; place-items: center; margin: 0 auto 20px; }
+    .auth-title { text-align: center; font-size: 1.5rem; margin-bottom: 6px; }
+    .auth-subtitle { text-align: center; color: var(--vc-neutral-500); font-size: 0.9375rem; margin-bottom: 28px; }
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 0.875rem; font-weight: 500; color: var(--vc-neutral-700); margin-bottom: 6px; }
+    .field-row { display: flex; justify-content: space-between; align-items: center; }
+    .field-row a { font-size: 0.75rem; color: var(--vc-primary-600); font-weight: 600; }
+    .field input { width: 100%; height: 44px; border: 1px solid var(--vc-neutral-300); border-radius: var(--radius); padding: 0 14px; font-size: 0.9375rem; outline: none; transition: all .15s; }
+    .field input:focus { border-color: var(--vc-primary-500); box-shadow: 0 0 0 3px rgba(99,102,241,0.15); }
+    .field-helper { font-size: 0.75rem; color: var(--vc-neutral-500); margin-top: 6px; }
+    .auth-btn { width: 100%; height: 48px; background: var(--vc-primary-600); color: white; border-radius: var(--radius); font-weight: 700; font-size: 0.9375rem; margin-top: 8px; }
+    .auth-btn:hover { background: var(--vc-primary-700); }
+    .auth-footer { text-align: center; margin-top: 20px; font-size: 0.875rem; color: var(--vc-neutral-500); }
+    .auth-footer a { color: var(--vc-primary-600); font-weight: 600; }
+
+    /* Components showcase */
+    .showcase { padding: 96px 24px; background: white; }
+    .component-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .component-card { padding: 24px; border: 1px solid var(--vc-neutral-200); border-radius: var(--radius); }
+    .component-card h4 { font-size: 1rem; margin-bottom: 16px; color: var(--vc-neutral-700); font-family: 'Inter', sans-serif; font-weight: 700; }
+    .badge-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge { padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
+    .badge-primary { background: var(--vc-primary-100); color: var(--vc-primary-700); }
+    .badge-accent { background: var(--vc-accent-100); color: var(--vc-accent-700); }
+    .badge-warm { background: #fef3c7; color: var(--vc-warm-600); }
+    .badge-success { background: var(--vc-success-50); color: var(--vc-success-600); }
+    .badge-error { background: var(--vc-error-50); color: var(--vc-error-600); }
+    .skeleton { background: var(--vc-neutral-200); border-radius: 6px; height: 12px; margin-bottom: 10px; animation: pulse 2s infinite; }
+    .skeleton.short { width: 60%; }
+    .avatar-row { display: flex; gap: 10px; align-items: center; }
+    .avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--vc-accent-600); color: white; display: grid; place-items: center; font-weight: 700; font-size: 0.875rem; }
+    .toast-demo { padding: 12px 16px; background: var(--vc-success-50); border: 1px solid var(--vc-success-500); color: var(--vc-success-600); border-radius: var(--radius); display: flex; align-items: center; gap: 10px; font-weight: 500; }
+
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
+
+    @media (max-width: 1024px) {
+      .hero-content { grid-template-columns: 1fr; padding-top: 80px; padding-bottom: 80px; }
+      .hero h1 { font-size: 2.75rem; }
+      .floating-card { transform: none; display: none; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: 1fr; }
+      .component-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .header-actions { display: none; }
+      .features-grid, .component-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HOME PAGE -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon"><i data-lucide="map" style="width:18px;height:18px;"></i></div>
+      VoyageCollab
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Fonctionnalités</a>
+      <a href="#how">Comment ça marche</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#login" class="btn btn-ghost btn-sm">Se connecter</a>
+      <a href="#register" class="btn btn-white btn-sm">Commencer</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg">
+    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M0,40 Q25,25 50,40 T100,40 V100 H0 Z" fill="#3B4CCA"/>
+      <path d="M0,70 Q35,55 70,70 T140,70 V100 H0 Z" fill="#7C3AED" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge"><span style="width:6px;height:6px;border-radius:50%;background:#818cf8;display:inline-block;"></span> Nouvelle expérience de voyage</div>
+      <h1>Planifiez vos voyages,<br><span>ensemble.</span></h1>
+      <p>Itinéraires partagés, dépenses collectives, sondages et carte interactive — tout ce qu'il faut pour organiser un voyage entre amis sans friction.</p>
+      <div class="hero-actions">
+        <a href="#register" class="btn btn-white"><i data-lucide="plus" style="width:18px;height:18px;"></i> Commencer gratuitement</a>
+        <a href="#login" class="btn btn-ghost">J'ai déjà un compte</a>
+      </div>
+      <div class="social-proof">
+        <div class="avatars">
+          <div class="avatar-mini" style="background:#14B8A6;">M</div>
+          <div class="avatar-mini" style="background:#7C3AED;">L</div>
+          <div class="avatar-mini" style="background:#D97706;">S</div>
+        </div>
+        <span>Rejoint par <strong style="color:white;">12 000+ voyageurs</strong></span>
+      </div>
+    </div>
+
+    <div class="floating-card">
+      <div class="fc-header">
+        <span class="fc-title">Road Trip USA</span>
+        <span class="fc-date">12-26 juin</span>
+      </div>
+      <div class="fc-item"><div class="fc-icon" style="background:rgba(59,76,202,0.2);">✈️</div><div><div class="fc-label">Vol AF023 — Paris → New York</div><div class="fc-meta">Lundi 12 juin, 14:00</div></div></div>
+      <div class="fc-item"><div class="fc-icon" style="background:rgba(124,58,237,0.2);">🏨</div><div><div class="fc-label">Hôtel The Standard</div><div class="fc-meta">East Village · 420 €</div></div></div>
+      <div class="fc-item"><div class="fc-icon" style="background:rgba(217,119,6,0.2);">🍽️</div><div><div class="fc-label">Diner Katz's Delicatessen</div><div class="fc-meta">Réservation confirmée</div></div></div>
+      <div class="fc-footer">
+        <div class="mini-avatars">
+          <div class="mini-avatar" style="background:#14B8A6;">M</div>
+          <div class="mini-avatar" style="background:#7C3AED;">L</div>
+          <div class="mini-avatar" style="background:#D97706;">S</div>
+          <div class="mini-avatar" style="background:#525252;">+3</div>
+        </div>
+        <span class="budget">Budget : 1 240 / 1 500 €</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="section-inner">
+    <div class="section-kicker">Fonctionnalités</div>
+    <h2 class="section-title">Tout ce qu'il faut pour voyager à plusieurs</h2>
+    <p class="section-subtitle">Fini les 15 onglets et les calculatrices. Un seul outil pour tout organiser.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon"><i data-lucide="calendar-days" style="width:24px;height:24px;"></i></div><h3 class="feature-title">Itinéraire partagé</h3><p class="feature-desc">Ajoutez vols, hôtels, restaurants et activités sur une timeline chronologique visible par tous.</p></div>
+      <div class="feature-card"><div class="feature-icon" style="background:var(--vc-accent-50);color:var(--vc-accent-600);"><i data-lucide="wallet" style="width:24px;height:24px;"></i></div><h3 class="feature-title">Dépenses et remboursements</h3><p class="feature-desc">Saisissez les frais, VoyageCollab calcule automatiquement qui doit quoi à qui.</p></div>
+      <div class="feature-card"><div class="feature-icon" style="background:#fff7ed;color:var(--vc-warm-600);"><i data-lucide="users" style="width:24px;height:24px;"></i></div><h3 class="feature-title">Collaboration en temps réel</h3><p class="feature-desc">Invitez vos amis, votez sur les options et discutez dans les commentaires.</p></div>
+      <div class="feature-card"><div class="feature-icon" style="background:var(--vc-error-50);color:var(--vc-error-600);"><i data-lucide="map-pin" style="width:24px;height:24px;"></i></div><h3 class="feature-title">Carte interactive</h3><p class="feature-desc">Visualisez toutes vos étapes et recommandations sur une carte.</p></div>
+      <div class="feature-card"><div class="feature-icon" style="background:#f0fdfa;color:var(--vc-teal-600);"><i data-lucide="trending-up" style="width:24px;height:24px;"></i></div><h3 class="feature-title">Import de liens</h3><p class="feature-desc">Collez un lien Airbnb, Booking ou Google Maps : une carte est créée automatiquement.</p></div>
+      <div class="feature-card"><div class="feature-icon"><i data-lucide="message-square" style="width:24px;height:24px;"></i></div><h3 class="feature-title">Sondages et décisions</h3><p class="feature-desc">Créez des sondages pour trancher dates, hébergements ou activités.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="how">
+  <div class="section-inner">
+    <div class="steps-grid">
+      <div>
+        <div class="section-kicker" style="color:var(--vc-accent-600);">Comment ça marche</div>
+        <h2 class="section-title">De l'idée à la route en 3 étapes</h2>
+        <div class="step-list">
+          <div class="step"><div class="step-num">1</div><div><h3 class="step-title">Créez votre voyage</h3><p class="step-desc">Choisissez une destination, des dates et invitez vos compagnons.</p></div></div>
+          <div class="step"><div class="step-num">2</div><div><h3 class="step-title">Construisez ensemble</h3><p class="step-desc">Ajoutez des étapes, votez, discutez et équilibrez le budget.</p></div></div>
+          <div class="step"><div class="step-num">3</div><div><h3 class="step-title">Partez l'esprit tranquille</h3><p class="step-desc">Tout le monde a le plan, les horaires et les comptes en poche.</p></div></div>
+        </div>
+      </div>
+      <div class="cta-card">
+        <h3>Tout ce dont vous avez besoin</h3>
+        <div class="check-item"><i data-lucide="check-circle-2" style="width:20px;height:20px;"></i> Invitations par email en un clic</div>
+        <div class="check-item"><i data-lucide="check-circle-2" style="width:20px;height:20px;"></i> Notifications de commentaires et votes</div>
+        <div class="check-item"><i data-lucide="check-circle-2" style="width:20px;height:20px;"></i> Export PDF de l'itinéraire</div>
+        <div class="check-item"><i data-lucide="check-circle-2" style="width:20px;height:20px;"></i> Application mobile responsive</div>
+        <a href="#register" class="btn btn-white" style="margin-top:24px;">Créer mon premier voyage <i data-lucide="arrow-right" style="width:18px;height:18px;"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN SYSTEM / PHASE 1 SHOWCASE -->
+<section class="showcase">
+  <div class="section-inner">
+    <div class="section-kicker">Phase 1</div>
+    <h2 class="section-title">Design system VoyageCollab</h2>
+    <p class="section-subtitle">Composants atomiques réutilisables et accessibles.</p>
+    <div class="component-grid">
+      <div class="component-card"><h4>Boutons</h4><div style="display:flex;flex-direction:column;gap:10px;"><button class="btn btn-primary">Primary</button><button class="btn" style="background:var(--vc-accent-600);color:white;">Accent</button><button class="btn btn-ghost" style="color:var(--vc-neutral-700);border-color:var(--vc-neutral-300);">Ghost</button></div></div>
+      <div class="component-card"><h4>Badges</h4><div class="badge-group"><span class="badge badge-primary">Planifié</span><span class="badge badge-accent">En cours</span><span class="badge badge-warm">Urgent</span><span class="badge badge-success">Payé</span><span class="badge badge-error">Annulé</span></div></div>
+      <div class="component-card"><h4>Inputs</h4><div class="field"><label>Email</label><input type="email" placeholder="marie@email.com" /></div><div class="field"><label>Mot de passe</label><input type="password" placeholder="••••••••" /></div></div>
+      <div class="component-card"><h4>États</h4><div class="skeleton"></div><div class="skeleton short"></div><div class="skeleton"></div><div style="margin-top:14px;" class="toast-demo"><i data-lucide="check-circle-2" style="width:18px;height:18px;"></i> Voyage créé avec succès</div></div>
+      <div class="component-card"><h4>Avatars</h4><div class="avatar-row"><div class="avatar" style="background:var(--vc-primary-600);">M</div><div class="avatar" style="background:var(--vc-accent-600);">L</div><div class="avatar" style="background:var(--vc-warm-500);">S</div><div class="avatar" style="background:var(--vc-teal-500);">J</div></div></div>
+      <div class="component-card"><h4>Couleurs</h4><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;"><div style="height:32px;border-radius:6px;background:var(--vc-primary-600);"></div><div style="height:32px;border-radius:6px;background:var(--vc-accent-600);"></div><div style="height:32px;border-radius:6px;background:var(--vc-teal-500);"></div><div style="height:32px;border-radius:6px;background:var(--vc-warm-500);"></div><div style="height:32px;border-radius:6px;background:var(--vc-error-500);"></div><div style="height:32px;border-radius:6px;background:var(--vc-success-500);"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTH PAGE -->
+<section class="auth-page" id="login">
+  <div class="auth-bg">
+    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M0,40 Q25,25 50,40 T100,40 V100 H0 Z" fill="#3B4CCA"/>
+      <path d="M0,70 Q35,55 70,70 T140,70 V100 H0 Z" fill="#7C3AED" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="auth-card">
+    <div class="auth-logo"><i data-lucide="map" style="width:24px;height:24px;"></i></div>
+    <h2 class="auth-title">Connexion</h2>
+    <p class="auth-subtitle">Ravi de vous revoir sur VoyageCollab.</p>
+    <form onsubmit="return false;">
+      <div class="field"><label>Email</label><input type="email" placeholder="marie@email.com" /></div>
+      <div class="field"><div class="field-row"><label>Mot de passe</label><a href="#">Mot de passe oublié ?</a></div><input type="password" placeholder="••••••••" /></div>
+      <button class="auth-btn">Se connecter</button>
+    </form>
+    <p class="auth-footer">Pas de compte ? <a href="#register">S'inscrire</a></p>
+  </div>
+</section>
+
+<!-- REGISTER PAGE -->
+<section class="auth-page" id="register" style="background:var(--vc-neutral-50);">
+  <div class="auth-bg" style="opacity:.08;">
+    <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M0,40 Q25,25 50,40 T100,40 V100 H0 Z" fill="#3B4CCA"/>
+      <path d="M0,70 Q35,55 70,70 T140,70 V100 H0 Z" fill="#7C3AED" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="auth-card" style="box-shadow:0 24px 64px rgba(0,0,0,0.08);">
+    <div class="auth-logo"><i data-lucide="map" style="width:24px;height:24px;"></i></div>
+    <h2 class="auth-title">Créer un compte</h2>
+    <p class="auth-subtitle">Rejoignez VoyageCollab et planifiez vos voyages.</p>
+    <form onsubmit="return false;">
+      <div class="field"><label>Nom complet</label><input type="text" placeholder="Marie Dupont" /></div>
+      <div class="field"><label>Email</label><input type="email" placeholder="marie@email.com" /></div>
+      <div class="field"><label>Mot de passe</label><input type="password" placeholder="8 caractères minimum" /><p class="field-helper">8 caractères minimum.</p></div>
+      <button class="auth-btn">S'inscrire</button>
+    </form>
+    <p class="auth-footer">Déjà un compte ? <a href="#login">Se connecter</a></p>
+  </div>
+</section>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
