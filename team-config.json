@@ -4,7 +4,7 @@
       "profile": "hugo_orchestrator",
       "name": "Hugo",
       "role": "Orchestrateur",
-      "model": "glm-5.2",
+      "model": "kimi-k2.7-code",
       "provider": "ollama",
       "toolsets": [
         "safe",
@@ -18,7 +18,7 @@
       "profile": "theo_router",
       "name": "Théo",
       "role": "Model Router",
-      "model": "glm-5.2",
+      "model": "kimi-k3",
       "provider": "ollama",
       "toolsets": [
         "memory",
@@ -31,7 +31,7 @@
       "profile": "lucas_software",
       "name": "Lucas",
       "role": "Software Engineer",
-      "model": "glm-5.2",
+      "model": "deepseek-v4-pro",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -46,7 +46,7 @@
       "profile": "pierre_frontend",
       "name": "Pierre",
       "role": "Frontend Engineer",
-      "model": "qwen3.5:397b",
+      "model": "glm-5.2",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -74,7 +74,7 @@
       "profile": "antoine_sysadmin",
       "name": "Antoine",
       "role": "SysAdmin / DevOps / Model Benchmarker",
-      "model": "qwen3.5:397b",
+      "model": "kimi-k2.6",
       "provider": "ollama",
       "toolsets": [
         "terminal",
@@ -87,7 +87,7 @@
       "profile": "maxime_security",
       "name": "Maxime",
       "role": "Security Engineer",
-      "model": "glm-5.2",
+      "model": "deepseek-v4-pro",
       "provider": "ollama",
       "toolsets": [
         "terminal",
@@ -101,7 +101,7 @@
       "profile": "sophie_qa",
       "name": "Sophie",
       "role": "QA Tester",
-      "model": "qwen3.5:397b",
+      "model": "glm-5.2",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -114,7 +114,7 @@
       "profile": "juliette_data",
       "name": "Juliette",
       "role": "Data Analyst",
-      "model": "qwen3.5:397b",
+      "model": "kimi-k2.6",
       "provider": "ollama",
       "toolsets": [
         "terminal",
@@ -127,7 +127,7 @@
       "profile": "camille_docs",
       "name": "Camille",
       "role": "Documentation",
-      "model": "qwen3.5:397b",
+      "model": "deepseek-v4-flash",
       "provider": "ollama",
       "toolsets": [
         "file",
@@ -140,7 +140,7 @@
       "profile": "emma_assistant",
       "name": "Emma",
       "role": "Assistant Personnel",
-      "model": "qwen3.5:397b",
+      "model": "deepseek-v4-flash",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -154,7 +154,7 @@
       "profile": "louis_business",
       "name": "Louis",
       "role": "Business Manager",
-      "model": "qwen3.5:397b",
+      "model": "deepseek-v4-flash",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -180,7 +180,7 @@
       "profile": "lea_marketing",
       "name": "Léa",
       "role": "Marketing",
-      "model": "qwen3.5:397b",
+      "model": "deepseek-v4-flash",
       "provider": "ollama",
       "toolsets": [
         "web",
@@ -193,7 +193,7 @@
       "profile": "nico_monitoring",
       "name": "Nico",
       "role": "Monitoring Agent",
-      "model": "qwen3.5:397b",
+      "model": "deepseek-v4-flash",
       "provider": "ollama",
       "toolsets": [
         "terminal",
