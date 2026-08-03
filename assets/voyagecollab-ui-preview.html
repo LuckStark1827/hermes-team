@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VoyageCollab — Direction artistique</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'vc-primary': { 50: '#EEF1FF', 100: '#DEE4FF', 200: '#BECDFF', 300: '#8FABFF', 400: '#5B7DFF', 500: '#4F61DB', 600: '#3B4CCA', 700: '#2E3FA6', 800: '#233282', 900: '#18235C' },
+        'vc-accent': { 50: '#F5F3FF', 100: '#EDE9FE', 200: '#DDD6FE', 300: '#C4B5FD', 400: '#A78BFA', 500: '#8B5CF6', 600: '#7C3AED', 700: '#6D28D9' },
+        'vc-warm': { 50: '#FFFBEB', 100: '#FEF3C7', 200: '#FDE68A', 300: '#FCD34D', 400: '#FBBF24', 500: '#D97706', 600: '#B45309' },
+        'vc-teal': { 50: '#F0FDFA', 100: '#CCFBF1', 400: '#2DD4BF', 500: '#14B8A6', 600: '#0D9488' },
+        'vc-neutral': { 50: '#F9FAFB', 100: '#F3F4F6', 200: '#E5E7EB', 300: '#D1D5DB', 400: '#9CA3AF', 500: '#6B7280', 600: '#4B5563', 700: '#374151', 800: '#1F2937', 900: '#111827' },
+        'vc-success': { 50: '#F0FDF4', 500: '#22C55E', 600: '#16A34A' },
+        'vc-error': { 50: '#FEF2F2', 500: '#EF4444', 600: '#DC2626', 700: '#B91C1C' }
+      },
+      fontFamily: { display: ['"Playfair Display"', 'Georgia', 'serif'], sans: ['Inter', 'system-ui', 'sans-serif'] },
+      boxShadow: { 'vc-card': '0 1px 3px rgba(17,24,39,0.08), 0 1px 2px rgba(17,24,39,0.04)', 'vc-card-hover': '0 10px 25px rgba(17,24,39,0.12), 0 4px 10px rgba(17,24,39,0.06)' },
+      borderRadius: { 'vc-sm': '6px', 'vc-md': '10px', 'vc-lg': '16px', 'vc-xl': '24px' }
+    }
+  }
+}
+</script>
+<style>
+body { font-family: 'Inter', sans-serif; }
+.font-display { font-family: 'Playfair Display', serif; }
+</style>
+</head>
+<body class="bg-vc-neutral-50 text-vc-neutral-900">
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-vc-neutral-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg bg-vc-primary-600 flex items-center justify-center text-white font-bold">V</div>
+      <span class="font-display text-xl font-bold text-vc-primary-700">VoyageCollab</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-vc-neutral-700">
+      <a href="#" class="text-vc-primary-600">Mes voyages</a>
+      <a href="#" class="hover:text-vc-primary-600 transition-colors">Explorer</a>
+    </nav>
+    <button class="hidden md:flex items-center gap-2 h-10 px-4 bg-vc-primary-600 hover:bg-vc-primary-500 text-white text-sm font-semibold rounded-vc-md transition-all shadow-sm">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      Nouveau voyage
+    </button>
+    <button class="md:hidden text-vc-neutral-700"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-gradient-to-b from-vc-primary-50 to-white pt-16 pb-20">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-vc-neutral-900 leading-tight mb-6">
+      Organisez vos voyages entre amis,<br><span class="text-vc-primary-600">sans effort.</span>
+    </h1>
+    <p class="text-lg sm:text-xl text-vc-neutral-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+      Planifiez itinéraire, budget et sondages ensemble,<br class="hidden sm:block"> dans une seule app.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+      <button class="h-12 px-8 bg-vc-primary-600 hover:bg-vc-primary-500 text-white font-semibold rounded-vc-md shadow-vc-card-hover transition-all flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        Créer un voyage
+      </button>
+      <button class="h-12 px-8 bg-white hover:bg-vc-neutral-50 text-vc-primary-600 font-semibold rounded-vc-md border border-vc-primary-200 transition-all">
+        Voir comment ça marche ↓
+      </button>
+    </div>
+    <div class="flex items-center justify-center gap-3 text-sm text-vc-neutral-600">
+      <div class="flex -space-x-2">
+        <div class="w-8 h-8 rounded-full bg-vc-teal-500 border-2 border-white flex items-center justify-center text-white text-xs font-bold">M</div>
+        <div class="w-8 h-8 rounded-full bg-vc-accent-500 border-2 border-white flex items-center justify-center text-white text-xs font-bold">L</div>
+        <div class="w-8 h-8 rounded-full bg-vc-warm-500 border-2 border-white flex items-center justify-center text-white text-xs font-bold">S</div>
+        <div class="w-8 h-8 rounded-full bg-vc-primary-500 border-2 border-white flex items-center justify-center text-white text-xs font-bold">+</div>
+      </div>
+      <span><strong>+12 000</strong> voyageurs ont déjà planifié</span>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="py-12 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="p-6 rounded-vc-lg bg-vc-neutral-50 hover:shadow-vc-card-hover transition-all">
+        <div class="w-12 h-12 rounded-full bg-vc-primary-100 text-vc-primary-600 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h3 class="font-semibold text-vc-neutral-900 mb-1">Itinéraire partagé</h3>
+        <p class="text-sm text-vc-neutral-500">Construisez votre planning jour par jour.</p>
+      </div>
+      <div class="p-6 rounded-vc-lg bg-vc-neutral-50 hover:shadow-vc-card-hover transition-all">
+        <div class="w-12 h-12 rounded-full bg-vc-accent-100 text-vc-accent-600 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3 class="font-semibold text-vc-neutral-900 mb-1">Dépenses partagées</h3>
+        <p class="text-sm text-vc-neutral-500">Suivez le budget et les remboursements.</p>
+      </div>
+      <div class="p-6 rounded-vc-lg bg-vc-neutral-50 hover:shadow-vc-card-hover transition-all">
+        <div class="w-12 h-12 rounded-full bg-vc-teal-100 text-vc-teal-600 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="font-semibold text-vc-neutral-900 mb-1">Carte interactive</h3>
+        <p class="text-sm text-vc-neutral-500">Visualisez vos étapes sur une carte.</p>
+      </div>
+      <div class="p-6 rounded-vc-lg bg-vc-neutral-50 hover:shadow-vc-card-hover transition-all">
+        <div class="w-12 h-12 rounded-full bg-vc-warm-100 text-vc-warm-600 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h.01M15 12h.01M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10Z"/></svg>
+        </div>
+        <h3 class="font-semibold text-vc-neutral-900 mb-1">Sondages et votes</h3>
+        <p class="text-sm text-vc-neutral-500">Décidez ensemble en un clic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dashboard -->
+<section class="py-12 bg-vc-neutral-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex items-center justify-between mb-8">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-vc-neutral-900">Mes voyages</h2>
+      <button class="h-10 px-4 bg-vc-primary-600 hover:bg-vc-primary-500 text-white text-sm font-semibold rounded-vc-md transition-all shadow-sm flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        Nouveau voyage
+      </button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-vc-lg shadow-vc-card hover:shadow-vc-card-hover transition-all cursor-pointer group">
+        <div class="h-40 bg-gradient-to-br from-vc-primary-400 to-vc-primary-700 rounded-t-vc-lg relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-white/30">
+            <svg class="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7Z"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 bg-white/90 text-vc-primary-700 text-xs font-bold px-2 py-1 rounded-vc-sm">12-26 juin</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-xl font-bold text-vc-neutral-900 mb-2 group-hover:text-vc-primary-600 transition-colors">Road Trip USA</h3>
+          <div class="flex flex-col gap-2 text-sm text-vc-neutral-600">
+            <div class="flex items-center gap-2"><svg class="w-4 h-4 text-vc-teal-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> États-Unis</div>
+            <div class="flex items-center gap-2"><svg class="w-4 h-4 text-vc-warm-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg> 4 membres</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="bg-white rounded-vc-lg shadow-vc-card hover:shadow-vc-card-hover transition-all cursor-pointer group">
+        <div class="h-40 bg-gradient-to-br from-vc-accent-400 to-vc-accent-700 rounded-t-vc-lg relative overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center text-white/30">
+            <svg class="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7Z"/></svg>
+          </div>
+          <span class="absolute top-3 left-3 bg-white/90 text-vc-accent-700 text-xs font-bold px-2 py-1 rounded-vc-sm">3-10 sept</span>
+        </div>
+        <div class="p-5">
+          <h3 class="font-display text-xl font-bold text-vc-neutral-900 mb-2 group-hover:text-vc-primary-600 transition-colors">Lisbonne 2026</h3>
+          <div class="flex flex-col gap-2 text-sm text-vc-neutral-600">
+            <div class="flex items-center gap-2"><svg class="w-4 h-4 text-vc-teal-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Portugal</div>
+            <div class="flex items-center gap-2"><svg class="w-4 h-4 text-vc-warm-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg> 6 membres</div>
+          </div>
+        </div>
+      </div>
+      <!-- Create card -->
+      <button class="bg-white border-2 border-dashed border-vc-neutral-300 rounded-vc-lg flex flex-col items-center justify-center gap-3 min-h-[280px] hover:border-vc-primary-400 hover:bg-vc-primary-50 transition-all text-vc-neutral-500 hover:text-vc-primary-600">
+        <div class="w-14 h-14 rounded-full bg-vc-neutral-100 flex items-center justify-center">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+        <span class="font-semibold">Créer votre voyage</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Toast -->
+<div class="fixed bottom-6 right-6 bg-white border border-vc-success-200 shadow-vc-popover rounded-vc-md p-4 flex items-center gap-3 z-50">
+  <div class="w-8 h-8 rounded-full bg-vc-success-50 text-vc-success-600 flex items-center justify-center">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+  </div>
+  <div>
+    <p class="text-sm font-semibold text-vc-neutral-900">Voyage créé avec succès</p>
+    <p class="text-xs text-vc-neutral-500">Road Trip USA est prêt.</p>
+  </div>
+</div>
+
+</body>
+</html>
