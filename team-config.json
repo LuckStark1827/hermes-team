@@ -73,7 +73,7 @@
     {
       "profile": "antoine_sysadmin",
       "name": "Antoine",
-      "role": "SysAdmin / DevOps",
+      "role": "SysAdmin / DevOps / Model Benchmarker",
       "model": "kimi-k2.6",
       "provider": "ollama",
       "toolsets": [
